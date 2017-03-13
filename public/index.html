@@ -17,9 +17,9 @@
 <body>
     <nav>
         <div class="nav-wrapper cyan lighten-1 z-depth-4">
-            <a href="#" class="brand-logo">EstiNet</a>
+            <a href="#" class="brand-logo" onclick="loadPage('index')">EstiNet</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a class="waves-effect waves-light" href="#">Link1</a></li>
+                <li><a class="waves-effect waves-light" href="#" onclick="loadPage('about')">Link1</a></li>
                 <li><a class="waves-effect waves-light" href="#">Im a link</a></li>
                 <li><a class="waves-effect waves-light" href="#">hai indev</a></li>
             </ul>
@@ -28,26 +28,53 @@
 
 
 
-    <div class="row">
-        <div class="carousel carousel-slider">
-            <a class="carousel-item" href="#one!"><img src="http://lorempixel.com/800/400/food/1"></a>
-            <a class="carousel-item" href="#two!"><img src="http://lorempixel.com/800/400/food/2"></a>
-            <a class="carousel-item" href="#three!"><img src="http://lorempixel.com/800/400/food/3"></a>
-            <a class="carousel-item" href="#four!"><img src="http://lorempixel.com/800/400/food/4"></a>
+    <div class="row" id="mainBody">
+
+        <!-- This is where the page contents goes. It is loaded in by JQuery. -->
+        <center>
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
+
+            <div class="spinner-layer spinner-red">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
+
+            <div class="spinner-layer spinner-yellow">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
+
+            <div class="spinner-layer spinner-green">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
         </div>
-        <div class="col s4 blue-grey lighten-2">
-            <!-- Grey navigation panel -->
-            <iframe src="https://discordapp.com/widget?id=121378426106937346&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
-        </div>
+        </center>
 
-        <div class="col s8 cyan darken-1">
-            <!-- Teal page content  -->
-
-            <div class="card-panel hoverable"> Hoverable Card Panel</div>
-
-
-
-        </div>
 
     </div>
 
@@ -85,11 +112,26 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         var socket = io();
+        socket.on('connect', function(data) {
+            Materialize.toast('Connected to SocketIO Server.', 4000)
+        });
+
     </script>
     <script>
         $(document).ready(function () {
-            $('.carousel.carousel-slider').carousel({fullWidth: true});
+            loadPage('index');
         });
+        function loadPage(page){
+            //Fade out mainBody contents, load in new contents, fade in new contents.
+            $('#mainBody').fadeOut('slow', function() {
+                $("#mainBody").load("pages/" + page + ".html", function () {
+                    $.getScript("materialize/js/materialize.min.js");
+                    $('#mainBody').fadeIn('slow');
+                    console.log("Load was performed.");
+
+                });
+            });
+        }
 
     </script>
 </body>
