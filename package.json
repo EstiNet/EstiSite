@@ -1,0 +1,24 @@
+{
+  "name": "estisite",
+  "version": "1.0.0",
+  "description": "EstiNet's Website.",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.15.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EstiNet/EstiSite.git"
+  },
+  "author": "DolphinBox",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "bugs": {
+    "url": "https://github.com/EstiNet/EstiSite/issues"
+  },
+  "homepage": "https://github.com/EstiNet/EstiSite#readme"
+}
