@@ -1,2 +1,2 @@
 
-Copyright (C) 2017 Seshpenguin
+Copyright (C) 2017 DolphinBox
