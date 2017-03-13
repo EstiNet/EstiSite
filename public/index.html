@@ -8,9 +8,7 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <script>
 
-    </script>
 
     <title>EstiNet - Different by Block</title>
 
@@ -28,33 +26,26 @@
         </div>
     </nav>
 
-    <div class="row">
-        <div class="col s3 blue-grey lighten-2">
-            <!-- Grey navigation panel -->
-            <nav>
-                <div class="nav-wrapper">
 
-                    <form>
-                        <div class="input-field">
-                            <input id="search" type="search" required>
-                            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                            <i class="material-icons">close</i>
-                        </div>
-                    </form>
-                </div>
-            </nav>
-            <div class="collection">
-                <a href="#!" class="collection-item">Alvin</a>
-                <a href="#!" class="collection-item active">Alvin</a>
-                <a href="#!" class="collection-item">Alvin</a>
-                <a href="#!" class="collection-item">Alvin</a>
-            </div>
+
+    <div class="row">
+        <div class="carousel carousel-slider">
+            <a class="carousel-item" href="#one!"><img src="http://lorempixel.com/800/400/food/1"></a>
+            <a class="carousel-item" href="#two!"><img src="http://lorempixel.com/800/400/food/2"></a>
+            <a class="carousel-item" href="#three!"><img src="http://lorempixel.com/800/400/food/3"></a>
+            <a class="carousel-item" href="#four!"><img src="http://lorempixel.com/800/400/food/4"></a>
+        </div>
+        <div class="col s4 blue-grey lighten-2">
+            <!-- Grey navigation panel -->
+            <iframe src="https://discordapp.com/widget?id=121378426106937346&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
         </div>
 
-        <div class="col s9 cyan darken-1">
+        <div class="col s8 cyan darken-1">
             <!-- Teal page content  -->
 
             <div class="card-panel hoverable"> Hoverable Card Panel</div>
+
+
 
         </div>
 
@@ -94,6 +85,12 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         var socket = io();
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.carousel.carousel-slider').carousel({fullWidth: true});
+        });
+
     </script>
 </body>
 </html>
