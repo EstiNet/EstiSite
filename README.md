@@ -1,9 +1,8 @@
-#EstiSite
+# EstiSite
 
-WIP EstiNet's future home on the internet.
+EstiNet dashboard and statistics website.
+<br>
+Maybe some other random stuff to do with your data >:D
 
----
-
-(c) 2017 DolphinBox
-<br />
-https://dolphinbox.net/
+<br> <br>
+https://estinet.net
